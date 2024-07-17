@@ -1,10 +1,5 @@
 {% extends pathjoin("includes", "base.nix.jinja") %}
 
-{% block packages %}
-    pdm
-    (python3.withPackages python-packages)
-{% endblock %}
-
 {% block languages %}
   python = {
     enable = true;
