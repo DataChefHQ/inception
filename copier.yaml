@@ -35,7 +35,7 @@ _subdirectory: template
 # Execute these commands on destination after copy
 _tasks:
   - command: |
-      devenv test
+      devenv shell nixfmt .
       git init
       git add .
       git commit -am 'This is the Inception 🎉'
