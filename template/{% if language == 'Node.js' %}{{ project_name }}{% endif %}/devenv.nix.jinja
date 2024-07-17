@@ -1,0 +1,16 @@
+{% extends pathjoin("includes", "base.nix.jinja") %}
+
+{% block packages %}
+    pkgs.nodePackages.vscode-langservers-extracted
+    pkgs.nodePackages.typescript-language-server
+{% endblock %}
+
+{% block languages %}
+  javascript.enable = true;
+  typescript.enable = true;
+{% endblock %}
+
+{% block hooks %}
+  prettier.enable = true;
+  editorconfig-checker.enable = true;
+{% endblock %}
