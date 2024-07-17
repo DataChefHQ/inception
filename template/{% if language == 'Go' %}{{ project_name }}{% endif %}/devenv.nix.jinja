@@ -1,0 +1,10 @@
+{% extends pathjoin("includes", "base.nix.jinja") %}
+
+{% block packages %}
+    gopls
+    air
+{% endblock %}
+
+{% block languages %}
+  go.enable = true;
+{% endblock %}
