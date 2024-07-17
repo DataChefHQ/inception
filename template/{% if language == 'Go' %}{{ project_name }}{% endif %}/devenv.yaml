@@ -2,8 +2,6 @@
 inputs:
   nixpkgs:
     url: github:cachix/devenv-nixpkgs/rolling
-  fenix:
-    url: github:nix-community/fenix
 
 # If you're using non-OSS software, you can set allowUnfree to true.
 # allowUnfree: true
