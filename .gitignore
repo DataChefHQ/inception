@@ -3,7 +3,9 @@
 
 ### direnv ###
 .direnv
-.envrc
+
+# Preserve this in sub-directories so it ships with templates
+/.envrc
 
 ### devenv ###
 .devenv
