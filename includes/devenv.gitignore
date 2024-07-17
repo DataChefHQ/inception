@@ -1,0 +1,7 @@
+### devenv ###
+devenv.local.nix
+.devenv.flake.nix
+.devenv
+
+# pre-commit
+.pre-commit-config.yaml
