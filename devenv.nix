@@ -1,8 +1,14 @@
-{ pkgs, lib, config, inputs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
 
 let
-  python-packages = p:
-    with p; [
+  python-packages =
+    p: with p; [
       pip
       python-lsp-server
       importmagic
@@ -30,7 +36,11 @@ in
   # https://devenv.sh/pre-commit-hooks/
   pre-commit.hooks = {
     black.enable = true;
-    nixpkgs-fmt.enable = true;
+    nixfmt = {
+      enable = true;
+      package = pkgs.nixfmt-rfc-style;
+      excludes = [ ".devenv.flake.nix" ];
+    };
     yamllint = {
       enable = true;
       settings.preset = "relaxed";
@@ -38,5 +48,4 @@ in
     pyright.enable = true;
     editorconfig-checker.enable = true;
   };
-
 }
