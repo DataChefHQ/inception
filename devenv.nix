@@ -9,19 +9,16 @@
 let
   python-packages =
     p: with p; [
-      pip
       python-lsp-server
       importmagic
       epc
-      black
-      mypy
     ];
 in
 {
   # https://devenv.sh/packages/
   packages = with pkgs; [
     pdm
-    (python3.withPackages python-packages)
+    (python312.withPackages python-packages)
   ];
 
   languages.python = {
