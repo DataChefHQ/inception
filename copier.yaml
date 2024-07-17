@@ -4,12 +4,17 @@ language:
   choices:
     - Python
     - Node.js
-    - Go
     - Rust
+    - Go
 
 project_name:
   type: str
   help: "Project name:"
+  validator: >-
+    {% if not (project_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
+    project_name must start with a letter, followed one or more
+    letters, digits or underscores all lowercase.
+    {% endif %}
 
 project_version:
   type: str
