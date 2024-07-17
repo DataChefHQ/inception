@@ -48,4 +48,7 @@ in
     pyright.enable = true;
     editorconfig-checker.enable = true;
   };
+
+  # https://devenv.sh/integrations/codespaces-devcontainer/
+  devcontainer.enable = true;
 }
