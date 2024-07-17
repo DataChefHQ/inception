@@ -1,0 +1,63 @@
+language:
+  type: str
+  help: "Programming Lanugage:"
+  choices:
+    - Python
+    - Node.js
+    - Go
+
+project_name:
+  type: str
+  help: "Project name:"
+
+project_version:
+  type: str
+  help: "Project version:"
+  default: 1.0.0
+
+project_description:
+  type: str
+  help: "Project description:"
+
+python_version:
+  type: str
+  help: "Required Python version:"
+  default: ">=3.12"
+  when: "{{  language == 'Python' }}"
+
+project_license:
+  type: str
+  help: "License(SPDX name)"
+  default: MIT
+
+_subdirectory: template
+
+# Execute these commands on destination after copy
+_tasks:
+  - command: |
+      devenv test
+      git init
+      git add .
+      git commit -am 'This is the Inception 🎉'
+    working_directory: "{{ project_name }}"
+
+_message_before_copy: |
+  Welcome to Incption 🎉, the gateway to your next big project!
+
+  Your next adventure starts here. Answer a few quick questions, and
+  I'll create a project tailored just for you!
+
+  Let's create something amazing! 🚀✨
+
+_message_after_copy: |
+  🎉 {{project_name}} Created Successfully! 🎉
+
+  Your tailored project is ready and waiting for you. Next steps:
+
+    1. Change directory to the project root:
+
+       $ cd {{ _copier_conf.dst_path }}/{{ project_name }}
+
+    2. Let's hack 🧑🏻‍💻
+
+  Good Luck, DataChef 🧑‍🍳

@@ -1,0 +1,19 @@
+[project]
+name = "{{project_name}}"
+version = "{{project_version}}"
+description = "{{project_description}}"
+authors = [
+    {name = "{{author_name}}", email = "{{author_email}}"},
+]
+dependencies = []
+requires-python = "{{python_version}}"
+readme = "README.md"
+license = {text = "{{project_license}}"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true

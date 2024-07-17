@@ -1,0 +1,57 @@
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
+
+{% block variables %}{% endblock %}
+{
+  # https://devenv.sh/basics/
+  env = {
+    GREET = "🛠️ Let's hack ";
+    {% block env %}{% endblock %}
+  };
+
+  # https://devenv.sh/scripts/
+  scripts.hello.exec = "echo $GREET";
+
+  enterShell = ''
+    hello
+  '';
+
+  # https://devenv.sh/packages/
+  packages = with pkgs; [
+    {% block packages %}{% endblock %}
+  ];
+
+  languages = {
+    {% block languages %}{% endblock %}
+  };
+
+  {% block extra_config %}{% endblock %}
+
+  # https://devenv.sh/pre-commit-hooks/
+  pre-commit.hooks = {
+    nixfmt = {
+      enable = true;
+      package = pkgs.nixfmt-rfc-style;
+      excludes = [ ".devenv.flake.nix" ];
+    };
+    yamllint = {
+      enable = true;
+      settings.preset = "relaxed";
+    };
+    {% block hooks %}{% endblock %}
+  };
+
+  # Make diffs fantastic
+  difftastic.enable = true;
+
+  # https://devenv.sh/integrations/dotenv/
+  dotenv.enable = true;
+
+  # https://devenv.sh/integrations/codespaces-devcontainer/
+  devcontainer.enable = true;
+}

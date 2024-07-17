@@ -1,0 +1,33 @@
+{% extends pathjoin("includes", "base.nix.jinja") %}
+
+{% block variables %}
+let
+  python-packages =
+    p: with p; [
+      pip
+      python-lsp-server
+      importmagic
+      epc
+      black # still necessary for some editors
+    ];
+in
+{% endblock %}
+
+{% block packages %}
+    pdm
+    (python3.withPackages python-packages)
+{% endblock %}
+
+{% block languages %}
+  python = {
+    enable = true;
+    package = pkgs.python312;
+    venv.enable = true;
+  };
+{% endblock %}
+
+{% block hooks %}
+    ruff.enable = true;
+    pyright.enable = true;
+    editorconfig-checker.enable = true;
+{% endblock %}
