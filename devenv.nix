@@ -18,12 +18,11 @@ in
   # https://devenv.sh/packages/
   packages = with pkgs; [
     pdm
-    (python312.withPackages python-packages)
+    (python3.withPackages python-packages)
   ];
 
   languages.python = {
     enable = true;
-    package = pkgs.python312;
     venv.enable = true;
   };
 
