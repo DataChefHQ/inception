@@ -4,11 +4,12 @@ version = "1.0.0"
 description = "Default template for PDM package"
 authors = [
     {name = "Reza (Shahin) Khanipour", email = "shahin@DataChef.co"},
+    {name = "Reza (Shahin) Khanipour", email = "shahin@datachef.co"},
 ]
 dependencies = [
     "copier>=9.3.1",
 ]
-requires-python = "==3.12.*"
+requires-python = "==3.11.*"
 readme = "README.md"
 license = {text = "MIT"}
 

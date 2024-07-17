@@ -1,16 +1,5 @@
 {% extends pathjoin("includes", "base.nix.jinja") %}
 
-{% block variables %}
-let
-  python-packages =
-    p: with p; [
-      python-lsp-server
-      importmagic
-      epc
-    ];
-in
-{% endblock %}
-
 {% block packages %}
     pdm
     (python3.withPackages python-packages)
@@ -19,7 +8,15 @@ in
 {% block languages %}
   python = {
     enable = true;
-    venv.enable = true;
+    venv = {
+      enable = true;
+      requirements = ''
+pdm
+python-lsp-server
+importmagic
+epc
+'';
+    };
   };
 {% endblock %}
 

@@ -6,24 +6,21 @@
   ...
 }:
 
-let
-  python-packages =
-    p: with p; [
-      python-lsp-server
-      importmagic
-      epc
-    ];
-in
 {
   # https://devenv.sh/packages/
-  packages = with pkgs; [
-    pdm
-    (python3.withPackages python-packages)
-  ];
+  packages = with pkgs; [ ];
 
   languages.python = {
     enable = true;
-    venv.enable = true;
+    venv = {
+      enable = true;
+      requirements = ''
+        pdm
+        python-lsp-server
+        importmagic
+        epc
+      '';
+    };
   };
 
   # Make diffs fantastic
