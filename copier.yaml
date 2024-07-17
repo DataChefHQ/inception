@@ -5,6 +5,7 @@ language:
     - Python
     - Node.js
     - Go
+    - Rust
 
 project_name:
   type: str

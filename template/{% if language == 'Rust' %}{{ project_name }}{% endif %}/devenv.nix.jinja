@@ -1,0 +1,22 @@
+{% extends pathjoin("includes", "base.nix.jinja") %}
+
+{% block languages %}
+rust = {
+  enable = true;
+
+  # https://devenv.sh/reference/options/#languagesrustchannel
+  channel = "nightly";
+
+  components = [
+    "rustc"
+    "cargo"
+    "clippy"
+    "rustfmt"
+    "rust-analyzer"
+  ];
+};
+{% endblock %}
+
+{% block hooks %}
+    editorconfig-checker.enable = true;
+{% endblock %}

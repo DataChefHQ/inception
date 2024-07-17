@@ -1,0 +1,21 @@
+# Top-most EditorConfig
+root = true
+
+[*]
+# Unix-style newlines with a newline ending every file
+end_of_line = lf
+insert_final_newline = true
+# Be gentle!
+charset = utf-8
+trim_trailing_whitespace = true
+indent_style = space
+
+[Makefile]
+indent_style = tab
+
+[*.{js,json}]
+indent_size = 2
+
+[*.rs]
+indent_size = 4
+max_line_length = 120
