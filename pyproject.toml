@@ -14,17 +14,21 @@ dynamic = ["version"]
 
 [tool.pdm]
 distribution = false
+path = "src/inception/__init__.py"
 
 [tool.pdm.version]
 source = "scm"
-write_to = "src/inception/__init__.py"
-write_template = '__version__ = "{}"'
 
 [tool.pdm.dev-dependencies]
 dev = [
     "Commitizen>=3.28.0",
+    "pdbpp>=0.10.3",
 ]
 [tool.commitizen]
 version = "1.0.0"
 update_changelog_on_bump = true
 version_provider = "scm"
+tag_format = "v$major.$minor.$patch$prerelease"
+version_files = [
+    "src/inception/__init__.py"
+]

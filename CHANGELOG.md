@@ -1,7 +1,8 @@
-## 1.1.0 (2024-07-19)
+## v1.1.0 (2024-07-19)
 
 ### Feat
 
+- Add release workflow to the main project.
 - add changelog to the main project.
 - Support generating containers using devenv.
 - add Commitzen together with SCM configuration.
@@ -12,7 +13,8 @@
 
 ### Refactor
 
-- update pdm lock and fix installation errors.
+- disable release workflow.
+- update pdm lock and fix installation errors. (#20)
 
 ## v1.0.1 (2024-07-17)
 
