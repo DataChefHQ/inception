@@ -1,6 +1,5 @@
 [project]
 name = "inception"
-version = "1.0.0"
 description = "Default template for PDM package"
 authors = [
     {name = "Reza (Shahin) Khanipour", email = "shahin@DataChef.co"},
@@ -9,10 +8,18 @@ authors = [
 dependencies = [
     "copier>=9.3.1",
 ]
-requires-python = "==3.11.*"
+requires-python = ">=3.11.0"
 readme = "README.md"
 license = {text = "MIT"}
-
+dynamic = ["version"]
 
 [tool.pdm]
 distribution = false
+
+[tool.pdm.version]
+source = "scm"
+write_to = "src/inception/__init__.py"
+write_template = '__version__ = "{}"'
+
+[tool.commitizen]
+version_provider = "scm"

@@ -8,7 +8,10 @@
 
 {
   # https://devenv.sh/packages/
-  packages = with pkgs; [ ];
+  packages = with pkgs; [
+    cargo
+    rustc
+  ];
 
   languages.python = {
     enable = true;
@@ -23,6 +26,9 @@
     };
   };
 
+  enterShell = ''
+    pdm install --no-self
+  '';
   # Make diffs fantastic
   difftastic.enable = true;
 
