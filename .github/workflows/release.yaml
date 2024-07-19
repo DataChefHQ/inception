@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        type: choice
+        description: Pre-release type (optional)
+        options:
+          - ''
+          - alpha
+          - beta
+          - rc
+        default: ''
+        required: false
+      increment:
+        type: choice
+        description: Increment type (optional)
+        options:
+          - ''
+          - MAJOR
+          - MINOR
+          - PATCH
+        default: ''
+        required: false
+
+jobs:
+  release:
+    name: Bump version and update the changelog
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: Bump version
+        uses: commitizen-tools/commitizen-action@master
+        with:
+          github_token: ${{ secrets.RELEASE_TOKEN }}
+          changelog_increment_filename: body.md
+          prerelease: ${{ github.event.inputs.prerelease }}
+          increment: ${{ github.event.inputs.increment }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: "body.md"
+          tag_name: ${{ env.REVISION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}

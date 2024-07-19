@@ -8,6 +8,7 @@
 
 {% block variables %}{% endblock %}
 {
+  name = "{{ project_name | replace('_', '-')}}";
   # https://devenv.sh/basics/
   env = {
     GREET = "🛠️ Let's hack ";

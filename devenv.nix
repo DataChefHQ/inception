@@ -7,10 +7,15 @@
 }:
 
 {
+  name = "inception";
+
   # https://devenv.sh/packages/
   packages = with pkgs; [
+    # Required for packages with Rust dependencies (eg. pydantic-core)
     cargo
     rustc
+    # https://github.com/DataChefHQ/inception/issues/21
+    git
   ];
 
   languages.python = {
