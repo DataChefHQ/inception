@@ -7,6 +7,8 @@
 }:
 
 {
+  name = "inception";
+
   # https://devenv.sh/packages/
   packages = with pkgs; [
     cargo

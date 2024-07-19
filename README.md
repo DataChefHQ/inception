@@ -36,18 +36,19 @@ decision and help us to improve them.
 
 ### Detailed Features
 
-| Feature                 | Python | Node.js | Go | Rust |
-|-------------------------|--------|---------|----|------|
-| dotenv                  | ✅     | ✅      | ✅ | ✅   |
-| difftastic              | ✅     | ✅      | ✅ | ✅   |
-| devcontainer            | ✅     | ✅      | ✅ | ✅   |
-| Yaml Lint               | ✅     | ✅      | ✅ | ✅   |
-| Type Check              | ✅     | ✅      | ✅ | ✅   |
-| Pre Commit Hooks        | ✅     | ✅      | ✅ | ✅   |
-| Language Server         | ✅     | ✅      | ✅ | ✅   |
-| Editor Config           | ✅     | ✅      | ✅ | ✅   |
-| Documentation Generator | ⏳     | ⏳      | ⏳ | ⏳   |
-| CI/CD                   | ⏳     | ⏳      | ⏳ | ⏳   |
+| Feature                 | Python | Node.js | Go  | Rust |
+|-------------------------|--------|---------|-----|------|
+| dotenv                  | ✅     | ✅      | ✅  | ✅   |
+| difftastic              | ✅     | ✅      | ✅  | ✅   |
+| devcontainer            | ✅     | ✅      | ✅  | ✅   |
+| Yaml Lint               | ✅     | ✅      | ✅  | ✅   |
+| Type Check              | ✅     | ✅      | N/A | N/A  |
+| Pre Commit Hooks        | ✅     | ✅      | ✅  | ✅   |
+| Language Server         | ✅     | ✅      | ✅  | ✅   |
+| Editor Config           | ✅     | ✅      | ✅  | ✅   |
+| Documentation Generator | ⏳     | ⏳      | ⏳  | ⏳   |
+| CI/CD                   | ⏳     | ⏳      | ⏳  | ⏳   |
+| Generate Containers     | ✅     | ✅      | ✅  | ✅   |
 
 ## How to Use
 
