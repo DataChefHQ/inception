@@ -3,7 +3,6 @@ name = "inception"
 description = "Default template for PDM package"
 authors = [
     {name = "Reza (Shahin) Khanipour", email = "shahin@DataChef.co"},
-    {name = "Reza (Shahin) Khanipour", email = "shahin@datachef.co"},
 ]
 dependencies = [
     "copier>=9.3.1",
@@ -21,5 +20,11 @@ source = "scm"
 write_to = "src/inception/__init__.py"
 write_template = '__version__ = "{}"'
 
+[tool.pdm.dev-dependencies]
+dev = [
+    "Commitizen>=3.28.0",
+]
 [tool.commitizen]
+version = "1.0.0"
+update_changelog_on_bump = true
 version_provider = "scm"
