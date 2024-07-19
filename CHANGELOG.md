@@ -1,7 +1,8 @@
-## Unreleased
+## 1.1.0 (2024-07-19)
 
 ### Feat
 
+- add changelog to the main project.
 - Support generating containers using devenv.
 - add Commitzen together with SCM configuration.
 
