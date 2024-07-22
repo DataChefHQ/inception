@@ -36,19 +36,22 @@ decision and help us to improve them.
 
 ### Detailed Features
 
-| Feature                 | Python | Node.js | Go  | Rust |
-|-------------------------|--------|---------|-----|------|
-| dotenv                  | ✅     | ✅      | ✅  | ✅   |
-| difftastic              | ✅     | ✅      | ✅  | ✅   |
-| devcontainer            | ✅     | ✅      | ✅  | ✅   |
-| Yaml Lint               | ✅     | ✅      | ✅  | ✅   |
-| Type Check              | ✅     | ✅      | N/A | N/A  |
-| Pre Commit Hooks        | ✅     | ✅      | ✅  | ✅   |
-| Language Server         | ✅     | ✅      | ✅  | ✅   |
-| Editor Config           | ✅     | ✅      | ✅  | ✅   |
-| Documentation Generator | ⏳     | ⏳      | ⏳  | ⏳   |
-| CI/CD                   | ⏳     | ⏳      | ⏳  | ⏳   |
-| Generate Containers     | ✅     | ✅      | ✅  | ✅   |
+| Feature                   | Python | Node.js | Go  | Rust |
+|---------------------------|--------|---------|-----|------|
+| Automatic Changelog       | ✅     | ⏳      | ⏳  | ⏳   |
+| Automatic Versioning      | ✅     | ⏳      | ⏳  | ⏳   |
+| CI/CD                     | ✅     | ✅      | ✅  | ✅   |
+| Check code docs on commit | ✅     | ⏳      | ⏳  | ⏳   |
+| Documentation Generator   | ⏳     | ⏳      | ⏳  | ⏳   |
+| Editor Config             | ✅     | ✅      | ✅  | ✅   |
+| Generate Containers       | ✅     | ✅      | ✅  | ✅   |
+| Language Server           | ✅     | ✅      | ✅  | ✅   |
+| Pre Commit Hooks          | ✅     | ✅      | ✅  | ✅   |
+| Type Check                | ✅     | ✅      | N/A | N/A  |
+| Yaml Lint                 | ✅     | ✅      | ✅  | ✅   |
+| devcontainer              | ✅     | ✅      | ✅  | ✅   |
+| difftastic                | ✅     | ✅      | ✅  | ✅   |
+| dotenv                    | ✅     | ✅      | ✅  | ✅   |
 
 ## How to Use
 
