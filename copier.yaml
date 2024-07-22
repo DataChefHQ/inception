@@ -36,6 +36,14 @@ project_license:
   help: "License(SPDX name)"
   default: MIT
 
+author_name:
+  type: str
+  help: "Author Name:"
+
+author_email:
+  type: str
+  help: "Author Email"
+
 _subdirectory: template
 
 # Execute these commands on destination after copy
