@@ -14,6 +14,28 @@ license = {text = "{{project_license}}"}
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
-
 [tool.pdm]
 distribution = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+select = [
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "UP", # pyupgrade
+  "D"   # pydocstyle
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+source = [
+    "src/{{ project_name }}",
+]
+
+[tool.coverage.report]
+skip_empty = true
