@@ -1,3 +1,22 @@
+## v1.2.0 (2024-07-22)
+
+### Feat
+
+- **python**: add automatic versioning using release script.
+- **python**: run pytest command at `devenv test`.
+- **Python**: Configure pytest and ruff in pyproject.toml.
+- **Github**: Add test workflow to all templates.
+- **ptyhon**: add project structure directories.
+- add release script.
+
+### Fix
+
+- **python**: add author detail to pyproject.toml.
+
+### Refactor
+
+- **ci/cd**: only run tests on pushes to main and PRs.
+
 ## v1.1.0 (2024-07-19)
 
 ### Feat
