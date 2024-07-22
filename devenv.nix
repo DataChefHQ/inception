@@ -48,6 +48,7 @@
   enterShell = ''
     pdm install --no-self
   '';
+
   # Make diffs fantastic
   difftastic.enable = true;
 
