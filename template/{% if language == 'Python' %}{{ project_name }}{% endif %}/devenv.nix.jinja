@@ -15,6 +15,22 @@ epc
   };
 {% endblock %}
 
+{% block script %}
+  # This script is temporary due to two problems:
+  #  1. `cz` requires a personal github token to publish a release https://commitizen-tools.github.io/commitizen/tutorials/github_actions/
+  #  2. `cz bump` fails to sign in a terminal: https://github.com/commitizen-tools/commitizen/issues/1184
+  scripts.release = {
+    exec = ''
+      rm CHANGELOG.md
+      cz bump --files-only --check-consistency
+      git tag $(python -c "from src.{{ project_name }} import __version__; print(__version__)")
+    '';
+    description = ''
+      Release a new version and update the CHANGELOG.
+    '';
+  };
+{% endblock %}
+
 {% block hooks %}
     ruff.enable = true;
     pyright.enable = true;

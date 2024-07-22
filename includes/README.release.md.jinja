@@ -1,0 +1,19 @@
+## Release
+
+To release a new version, you can use automatic `release` command
+installed by `devenv` scripts. This script will:
+
+1. Bump the version based on [Conventional
+Commits](https://www.conventionalcommits.org/en/v1.0.0/) format found
+in the commit history.
+2. Update `CHANGELOG.MD`.
+3. Assign version tag to the repository.
+
+After the script finished successfully, you need to:
+
+1. Commit changes.
+2. `git push` and `git push --tags`.
+
+If you want to have a release on your source control system, Github or
+Gitlab, you can do it dependent to the system, using the published
+tags.
