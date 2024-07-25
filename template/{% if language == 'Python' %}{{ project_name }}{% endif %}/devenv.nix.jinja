@@ -10,6 +10,7 @@ pdm
 python-lsp-server
 importmagic
 epc
+black
 '';
     };
   };
@@ -31,8 +32,13 @@ epc
   };
 {% endblock %}
 
+{% block extra_config %}
+enterShell = ''
+  hello
+  pdm install
+'';
+{% endblock %}
 {% block hooks %}
     ruff.enable = true;
-    pyright.enable = true;
     editorconfig-checker.enable = true;
 {% endblock %}

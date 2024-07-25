@@ -24,7 +24,11 @@ path = "src/{{project_name}}/__init__.py"
 [tool.pdm.dev-dependencies]
 dev = [
     "Commitizen>=3.28.0",
+    "mypy>=1.11.0",
     "pdbpp>=0.10.3",
+    "pytest-coverage>=0.0",
+    "pytest-dependency>=0.6.0",
+    "pytest>=8.3.1",
 ]
 [tool.commitizen]
 version = "1.0.0"
