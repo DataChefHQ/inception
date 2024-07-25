@@ -1,3 +1,12 @@
+## v1.4.0 (2024-07-25)
+
+### Feat
+
+- **python**: automatic Github release on merge to main.
+- **inception**: release on merge.
+
+## 1.3.0 (2024-07-25)
+
 ## v1.3.0 (2024-07-25)
 
 ### Feat
