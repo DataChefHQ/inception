@@ -39,6 +39,7 @@ decision and help us to improve them.
 | Feature                   | Python | Node.js | Go  | Rust |
 |---------------------------|--------|---------|-----|------|
 | Automatic Changelog       | ✅     | ⏳      | ⏳  | ⏳   |
+| Automatic Release         | ✅     | ⏳      | ⏳  | ⏳   |
 | Automatic Versioning      | ✅     | ⏳      | ⏳  | ⏳   |
 | CI/CD                     | ✅     | ✅      | ✅  | ✅   |
 | Check code docs on commit | ✅     | ⏳      | ⏳  | ⏳   |
@@ -52,7 +53,6 @@ decision and help us to improve them.
 | devcontainer              | ✅     | ✅      | ✅  | ✅   |
 | difftastic                | ✅     | ✅      | ✅  | ✅   |
 | dotenv                    | ✅     | ✅      | ✅  | ✅   |
-
 ## How to Use
 
 ### Prerequisites
