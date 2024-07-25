@@ -16,6 +16,9 @@
     rustc
     # https://github.com/DataChefHQ/inception/issues/21
     git
+    bat
+    jq
+    tealdeer
   ];
 
   # This script is temporary due to two problems:
@@ -31,6 +34,9 @@
       Release a new version and update the CHANGELOG.
     '';
   };
+  scripts.cat.exec = ''
+    bat "$@";
+  '';
 
   languages.python = {
     enable = true;

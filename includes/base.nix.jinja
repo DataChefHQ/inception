@@ -17,16 +17,18 @@
 
   # https://devenv.sh/scripts/
   scripts.hello.exec = "echo $GREET";
+  scripts.cat.exec = ''
+    bat "$@";
+  '';
 
   {% block script %}{% endblock %}
-
-  enterShell = ''
-    hello
-  '';
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
     nixfmt-rfc-style
+    bat
+    jq
+    tealdeer
     {% block packages %}{% endblock %}
   ];
 
