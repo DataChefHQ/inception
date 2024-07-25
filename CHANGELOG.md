@@ -1,3 +1,16 @@
+## v1.3.0 (2024-07-25)
+
+### Feat
+
+- **inception**: automatic release workflow.
+- add `jq` and `bat` (with alias)
+
+### Fix
+
+- github token for inception release checkout.
+- **python**: update deprecated linter configuration.
+- **python**: type checking issue.
+
 ## v1.2.0 (2024-07-22)
 
 ### Feat
