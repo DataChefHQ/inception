@@ -1,3 +1,9 @@
+## v1.4.1 (2024-07-25)
+
+### Fix
+
+- **python**: add missing initial version.
+
 ## v1.4.0 (2024-07-25)
 
 ### Feat
