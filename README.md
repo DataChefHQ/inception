@@ -63,9 +63,24 @@ To start working with Inception, you need:
 - [pipx](https://pipx.pypa.io/stable/) or
   [copier](https://copier.readthedocs.io/)
 
-For smoother operation, we recommend installing
-[direnv](https://direnv.net/) as described in [this
-documentation](https://devenv.sh/automatic-shell-activation/).
+#### Optional but Suggested
+
+##### [direnv](https://direnv.net)
+
+Enabling direnv allows you to:
+
+1. Use your own shell configuration in `devenv` session.
+2. Automatically integrated with your IDE (VSCode and Intellij support
+   it out of the box, and for Emacs and Vim you can use suggested
+   plugins below).
+   
+For more information on how to enable it you can refer to [this wiki
+entry](https://github.com/DataChefHQ/inception/wiki/How-to-enable-direnv%3F).
+
+*Suggested Plguins*:
+
+1. [emacs-direnv](https://github.com/wbolster/emacs-direnv)
+2. [direnv.vim](https://github.com/direnv/direnv.vim)
 
 #### Notes for MAC users
 
