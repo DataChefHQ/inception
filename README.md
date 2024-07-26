@@ -14,7 +14,6 @@ decision and help us to improve them.
 
 ## In Action
 
-
 [![asciicast](https://asciinema.org/a/WUasxV6aSiDQV0uqiYncLuQmY.svg?latest)](https://asciinema.org/a/WUasxV6aSiDQV0uqiYncLuQmY)
 
 ## Features
@@ -37,7 +36,7 @@ decision and help us to improve them.
 ### Detailed Features
 
 | Feature                   | Python | Node.js | Go  | Rust |
-|---------------------------|--------|---------|-----|------|
+| ------------------------- | ------ | ------- | --- | ---- |
 | Automatic Changelog       | ✅     | ⏳      | ⏳  | ⏳   |
 | Automatic Release         | ✅     | ⏳      | ⏳  | ⏳   |
 | Automatic Versioning      | ✅     | ⏳      | ⏳  | ⏳   |
@@ -53,13 +52,14 @@ decision and help us to improve them.
 | devcontainer              | ✅     | ✅      | ✅  | ✅   |
 | difftastic                | ✅     | ✅      | ✅  | ✅   |
 | dotenv                    | ✅     | ✅      | ✅  | ✅   |
+
 ## How to Use
 
 ### Prerequisites
 
 To start working with Inception, you need:
 
-- [Devenv](https://devenv.sh/getting-started/)
+- [Devenv](https://devenv.sh/getting-started/), version 1.0.0 or higher.
 - [pipx](https://pipx.pypa.io/stable/) or
   [copier](https://copier.readthedocs.io/)
 
@@ -67,14 +67,45 @@ For smoother operation, we recommend installing
 [direnv](https://direnv.net/) as described in [this
 documentation](https://devenv.sh/automatic-shell-activation/).
 
+#### Notes for MAC users
+
+If you have just installed Nix for the first time, you will most likely see the following error
+
+```
+✖ You're not a trusted user of the Nix store. You have the following options:
+
+a) Add yourself to the trusted-users list in /etc/nix/nix.conf for devenv to manage caches for you.
+
+trusted-users = root YOUR_USERNAME
+
+Restart nix-daemon with:
+
+  $ sudo launchctl kickstart -k system/org.nixos.nix-daemon
+
+b) Add binary caches to /etc/nix/nix.conf yourself:
+
+extra-substituters = https://devenv.cachix.org
+extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+
+And disable automatic cache configuration in `devenv.nix`:
+
+{
+    cachix.enable = false;
+}
+```
+
+We recommend adding yourself as a trusted user in `/etc/nix/nix.conf`. Don't forget to restart the nix-daemon after doing this.
+
 ### Initialize a New Project
 
 Using pipx:
+
 ```bash
 pipx run copier copy --trust gh:DataChefHQ/Inception .
 ```
 
 If you have copier installed locally, use:
+
 ```bash
 copier copy --trust gh:DataChefHQ/Inception .
 ```
