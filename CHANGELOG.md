@@ -1,3 +1,9 @@
+## v1.4.2 (2024-07-26)
+
+### Fix
+
+- **python**: downgrade Python version to 3.11.
+
 ## v1.4.1 (2024-07-25)
 
 ### Fix
