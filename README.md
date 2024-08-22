@@ -14,7 +14,7 @@ decision and help us to improve them.
 
 ## In Action
 
-[![asciicast](https://asciinema.org/a/WUasxV6aSiDQV0uqiYncLuQmY.svg?latest)](https://asciinema.org/a/WUasxV6aSiDQV0uqiYncLuQmY)
+[![asciicast](https://asciinema.org/a/Mp4w76BgrVcu4hvUR9nbb8EIL.svg)](https://asciinema.org/a/Mp4w76BgrVcu4hvUR9nbb8EIL)
 
 ## Features
 
@@ -82,34 +82,13 @@ entry](https://github.com/DataChefHQ/inception/wiki/How-to-enable-direnv%3F).
 1. [emacs-direnv](https://github.com/wbolster/emacs-direnv)
 2. [direnv.vim](https://github.com/direnv/direnv.vim)
 
-#### Notes for MAC users
-
-If you have just installed Nix for the first time, you will most likely see the following error
-
-```
-✖ You're not a trusted user of the Nix store. You have the following options:
-
-a) Add yourself to the trusted-users list in /etc/nix/nix.conf for devenv to manage caches for you.
-
-trusted-users = root YOUR_USERNAME
-
-Restart nix-daemon with:
-
-  $ sudo launchctl kickstart -k system/org.nixos.nix-daemon
-
-b) Add binary caches to /etc/nix/nix.conf yourself:
-
-extra-substituters = https://devenv.cachix.org
-extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
-
-And disable automatic cache configuration in `devenv.nix`:
-
-{
-    cachix.enable = false;
-}
-```
-
-We recommend adding yourself as a trusted user in `/etc/nix/nix.conf`. Don't forget to restart the nix-daemon after doing this.
+> [!NOTE]
+> While installing `devenv` for the first time, you might face the
+> following known errors depending to your local setup. Following links
+> aim to help you solve them quickly:
+>
+> - [Add user to the trusted user list](https://github.com/DataChefHQ/inception/wiki/MacOS:-add-user-to-the-trusted-user-list)
+> - [Trusting git directory](https://github.com/DataChefHQ/inception/wiki/Trusting-git-directory)
 
 ### Initialize a New Project
 
@@ -124,6 +103,11 @@ If you have copier installed locally, use:
 ```bash
 copier copy --trust gh:DataChefHQ/Inception .
 ```
+
+## Resources
+
+- [Devenv Docs](https://devenv.sh/getting-started/)
+- [Nix in 100 Seconds](https://www.youtube.com/watch?v=FJVFXsNzYZQ)
 
 ## Contributing
 
