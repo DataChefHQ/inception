@@ -12,11 +12,29 @@ we use mainly in [DataChef](https://datachef.co). However, given the
 open source nature of this project, feel free to challenge these
 decision and help us to improve them.
 
-## In Action
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Inception](#inception)
+- [In Action](#in-action)
+- [Features](#features)
+    - [Detailed Features](#detailed-features)
+- [How to Use](#how-to-use)
+    - [Prerequisites](#prerequisites)
+    - [Initialize a New Project](#initialize-a-new-project)
+- [Resources](#resources)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+<!-- markdown-toc end -->
+
+
+# In Action
 
 [![asciicast](https://asciinema.org/a/Mp4w76BgrVcu4hvUR9nbb8EIL.svg)](https://asciinema.org/a/Mp4w76BgrVcu4hvUR9nbb8EIL)
 
-## Features
+# Features
 
 1. **Opinionated Configuration**: Reduces decision fatigue by
    providing fewer, well-chosen options.
@@ -33,7 +51,7 @@ decision and help us to improve them.
 6. **Comprehensive .gitignore**: Includes a well-crafted `.gitignore`
    file.
 
-### Detailed Features
+## Detailed Features
 
 | Feature                   | Python | Node.js | Go  | Rust |
 | ------------------------- | ------ | ------- | --- | ---- |
@@ -53,9 +71,9 @@ decision and help us to improve them.
 | difftastic                | ✅     | ✅      | ✅  | ✅   |
 | dotenv                    | ✅     | ✅      | ✅  | ✅   |
 
-## How to Use
+# How to Use
 
-### Prerequisites
+## Prerequisites
 
 To start working with Inception, you need:
 
@@ -63,19 +81,16 @@ To start working with Inception, you need:
 - [pipx](https://pipx.pypa.io/stable/) or
   [copier](https://copier.readthedocs.io/)
 
-#### Optional but Suggested
-
-##### [direnv](https://direnv.net)
-
-Enabling direnv allows you to:
-
-1. Use your own shell configuration in `devenv` session.
-2. Automatically integrated with your IDE (VSCode and Intellij support
-   it out of the box, and for Emacs and Vim you can use suggested
-   plugins below).
-   
-For more information on how to enable it you can refer to [this wiki
-entry](https://github.com/DataChefHQ/inception/wiki/How-to-enable-direnv%3F).
+> [!TIP]
+> Enabling [direnv](https://direnv.net) allows you to:
+>
+> 1. Use your own shell configuration in `devenv` session.
+> 2. Automatically integrated with your IDE (VSCode and Intellij support
+>   it out of the box, and for Emacs and Vim you can use suggested
+>   plugins below).
+>
+> For more information on how to enable it you can refer to [this wiki
+> entry](https://github.com/DataChefHQ/inception/wiki/How-to-enable-direnv%3F).
 
 *Suggested Plguins*:
 
@@ -90,7 +105,7 @@ entry](https://github.com/DataChefHQ/inception/wiki/How-to-enable-direnv%3F).
 > - [Add user to the trusted user list](https://github.com/DataChefHQ/inception/wiki/MacOS:-add-user-to-the-trusted-user-list)
 > - [Trusting git directory](https://github.com/DataChefHQ/inception/wiki/Trusting-git-directory)
 
-### Initialize a New Project
+## Initialize a New Project
 
 Using pipx:
 
@@ -104,22 +119,22 @@ If you have copier installed locally, use:
 copier copy --trust gh:DataChefHQ/Inception .
 ```
 
-## Resources
+# Resources
 
 - [Devenv Docs](https://devenv.sh/getting-started/)
 - [Nix in 100 Seconds](https://www.youtube.com/watch?v=FJVFXsNzYZQ)
 
-## Contributing
+# Contributing
 
 We welcome contributions! Please check out our [contributing
 guidelines](CONTRIBUTING.md) to get started.
 
-## License
+# License
 
 This project is licensed under the MIT License - see the
 [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+# Acknowledgments
 
 - Thanks to the open-source community for their invaluable
   contributions to projects which we are building on:
