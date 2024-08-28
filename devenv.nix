@@ -44,7 +44,8 @@
       enable = true;
       requirements = ''
         pdm
-        python-lsp-server
+        python-lsp-server[all]
+        pylint
         importmagic
         epc
       '';
