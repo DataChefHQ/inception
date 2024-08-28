@@ -1,3 +1,9 @@
+## v1.5.0 (2024-08-28)
+
+### Feat
+
+- **python**: add pylint and enable all lsp dependencies for python.
+
 ## v1.4.2 (2024-07-26)
 
 ### Fix
