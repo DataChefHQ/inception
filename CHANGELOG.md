@@ -1,3 +1,10 @@
+## v1.5.1 (2024-09-05)
+
+### Refactor
+
+- **nix**: update nixfmt hook.
+- **devenv**: switch to `nixpkgs-unstable` repository.
+
 ## v1.5.0 (2024-08-28)
 
 ### Feat
