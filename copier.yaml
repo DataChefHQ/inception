@@ -29,7 +29,15 @@ python_version:
   type: str
   help: "Required Python version:"
   default: ">=3.11"
-  when: "{{  language == 'Python' }}"
+  when: "{{ language == 'Python' }}"
+
+python_package_manager:
+  type: str
+  help: "Package Manager:"
+  choices:
+    - Poetry
+    - PDM
+  when: "{{ language == 'Python' }}"
 
 project_license:
   type: str

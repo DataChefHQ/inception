@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "DataChef's project kickstarter! Reproducible, Declarative and Reliable development environments."
 authors = ["Reza (Shahin) Khanipour <Shahin@DataChef.co>"]
 readme = "README.md"
-package = [
+packages = [
   { include = "iception", from = "src" },
 ]
 

@@ -1,3 +1,4 @@
+{% if python_package_manager == "PDM" %}
 [project]
 name = "{{project_name}}"
 version = "{{project_version}}"
@@ -30,6 +31,31 @@ dev = [
     "pytest-dependency>=0.6.0",
     "pytest>=8.3.1",
 ]
+
+{% elif python_package_manager == "Poetry" %}
+[tool.poetry]
+name = "{{project_name}}"
+version = "{{project_version}}"
+description = "{{project_description}}"
+authors = ["{{author_name}} <{{author_email}}>"]
+readme = "README.md"
+license = "{{project_license}}"
+packages = [
+  { include = "{{project_name}}", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "{{python_version}}"
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.29.0"
+pdbpp = "^0.10.3"
+mypy = "^1.11.0"
+pytest-coverage = "^0.0"
+pytest-dependency = "^0.6.0"
+pytest = "^8.3.1"
+{% endif %}
+
 [tool.commitizen]
 version = "1.0.0"
 update_changelog_on_bump = true
