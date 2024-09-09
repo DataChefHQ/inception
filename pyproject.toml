@@ -1,29 +1,25 @@
-[project]
+[tool.poetry]
 name = "inception"
-description = "Default template for PDM package"
-authors = [
-    {name = "Reza (Shahin) Khanipour", email = "shahin@DataChef.co"},
-]
-dependencies = [
-    "copier>=9.3.1",
-]
-requires-python = ">=3.11.0"
+version = "0.1.0"
+description = "DataChef's project kickstarter! Reproducible, Declarative and Reliable development environments."
+authors = ["Reza (Shahin) Khanipour <Shahin@DataChef.co>"]
 readme = "README.md"
-license = {text = "MIT"}
-dynamic = ["version"]
-
-[tool.pdm]
-distribution = false
-path = "src/inception/__init__.py"
-
-[tool.pdm.version]
-source = "scm"
-
-[tool.pdm.dev-dependencies]
-dev = [
-    "Commitizen>=3.28.0",
-    "pdbpp>=0.10.3",
+package = [
+  { include = "iception", from = "src" },
 ]
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+copier = "^9.3.1"
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.29.0"
+pdbpp = "^0.10.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.commitizen]
 version = "1.0.0"
 update_changelog_on_bump = true
