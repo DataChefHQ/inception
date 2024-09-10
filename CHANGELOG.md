@@ -1,3 +1,13 @@
+## v1.6.0 (2024-09-10)
+
+### Feat
+
+- **Python**: support Poetry package manager.
+
+### Refactor
+
+- switch main package manager to Poetry.
+
 ## v1.5.1 (2024-09-05)
 
 ### Refactor
