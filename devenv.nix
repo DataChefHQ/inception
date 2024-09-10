@@ -6,6 +6,15 @@
   ...
 }:
 
+let
+  python-packages =
+    p: with p; [
+      pip
+      python-lsp-server
+      epc
+      black
+    ];
+in
 {
   name = "inception";
 
@@ -19,6 +28,9 @@
     bat
     jq
     tealdeer
+
+    # Python Dependencies
+    (python3.withPackages python-packages)
   ];
 
   # This script is temporary due to two problems:
@@ -40,21 +52,14 @@
 
   languages.python = {
     enable = true;
-    venv = {
+    poetry = {
       enable = true;
-      requirements = ''
-        pdm
-        python-lsp-server[all]
-        pylint
-        importmagic
-        epc
-      '';
+      activate.enable = true;
+      install.enable = true;
+      install.allExtras = true;
+      install.groups = [ "dev" ];
     };
   };
-
-  enterShell = ''
-    pdm install --no-self
-  '';
 
   # Make diffs fantastic
   difftastic.enable = true;
@@ -62,9 +67,8 @@
   # https://devenv.sh/pre-commit-hooks/
   pre-commit.hooks = {
     black.enable = true;
-    nixfmt = {
+    nixfmt-rfc-style = {
       enable = true;
-      package = pkgs.nixfmt-rfc-style;
       excludes = [ ".devenv.flake.nix" ];
     };
     yamllint = {
