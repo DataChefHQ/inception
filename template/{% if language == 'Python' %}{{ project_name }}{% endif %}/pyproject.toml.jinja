@@ -57,11 +57,12 @@ pytest = "^8.3.1"
 {% endif %}
 
 [tool.commitizen]
-version = "1.0.0"
+version = "{{project_version}}"
 update_changelog_on_bump = true
 version_provider = "scm"
 tag_format = "v$major.$minor.$patch$prerelease"
 version_files = [
+    "pyproject.toml:version",
     "src/{{project_name}}/__init__.py"
 ]
 
