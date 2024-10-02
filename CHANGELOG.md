@@ -1,3 +1,9 @@
+## v1.6.2 (2024-10-02)
+
+### Fix
+
+- consistently set the same version across python package.
+
 ## v1.6.1 (2024-10-02)
 
 ### Fix
