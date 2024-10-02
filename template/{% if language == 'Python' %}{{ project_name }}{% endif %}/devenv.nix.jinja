@@ -1,5 +1,11 @@
 {% extends pathjoin("includes", "base.nix.jinja") %}
 
+{% block variables %}
+let
+  python-packages = p: with p; [ pip python-lsp-server epc black ];
+in
+{% endblock %}
+
 {% block languages %}
   python = {
     enable = true;
@@ -24,6 +30,13 @@ black
       install.groups = [ "dev" ];
     };
     {% endif %}
+
+    {% block packages %}
+    stdenv.cc.cc.lib # required by jupyter
+    gcc-unwrapped # fix: libstdc++.so.6: cannot open shared object file
+    libz # fix: for numpy/pandas import
+    (python3.withPackages python-packages)
+    {% endblock %}
   };
 {% endblock %}
 
