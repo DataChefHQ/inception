@@ -1,3 +1,9 @@
+## v1.6.1 (2024-10-02)
+
+### Fix
+
+- add missing dev packages with poetry.
+
 ## v1.6.0 (2024-09-10)
 
 ### Feat
