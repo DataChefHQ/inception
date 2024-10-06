@@ -7,10 +7,17 @@
 
 {% block languages %}
   javascript.enable = true;
+  javascript.npm = {
+    enable = true;
+    install.enable = true;
+  };
   typescript.enable = true;
 {% endblock %}
 
 {% block hooks %}
   prettier.enable = true;
   editorconfig-checker.enable = true;
+  eslint = {
+    enable = true;
+  };
 {% endblock %}
