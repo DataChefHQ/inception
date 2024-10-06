@@ -1,3 +1,11 @@
+## v1.6.3 (2024-10-06)
+
+### Fix
+
+- typo here
+- quick manual patch for fenix input
+- pretty sure this is a typo
+
 ## v1.6.2 (2024-10-02)
 
 ### Fix
