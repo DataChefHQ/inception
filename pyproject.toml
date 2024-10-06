@@ -5,7 +5,7 @@ description = "DataChef's project kickstarter! Reproducible, Declarative and Rel
 authors = ["Reza (Shahin) Khanipour <Shahin@DataChef.co>"]
 readme = "README.md"
 packages = [
-  { include = "iception", from = "src" },
+  { include = "inception", from = "src" },
 ]
 
 [tool.poetry.dependencies]
