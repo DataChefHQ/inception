@@ -1,3 +1,9 @@
+## v1.8.0 (2024-10-14)
+
+### Feat
+
+- **python**: enable black check on commit.
+
 ## v1.7.1 (2024-10-14)
 
 ### Fix
