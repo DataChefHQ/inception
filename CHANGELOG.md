@@ -1,3 +1,9 @@
+## v1.8.1 (2024-10-14)
+
+### Fix
+
+- match ruff line length with black's one
+
 ## v1.8.0 (2024-10-14)
 
 ### Feat
