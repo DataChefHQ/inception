@@ -1,3 +1,9 @@
+## v1.7.1 (2024-10-14)
+
+### Fix
+
+- **python**: remove package dependencies from language section.
+
 ## v1.7.0 (2024-10-06)
 
 ### Feat
