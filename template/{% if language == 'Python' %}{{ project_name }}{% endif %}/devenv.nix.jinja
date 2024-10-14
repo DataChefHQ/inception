@@ -2,7 +2,7 @@
 
 {% block variables %}
 let
-  python-packages = p: with p; [ pip python-lsp-server epc black ];
+  python-packages = p: with p; [ pip python-lsp-server epc black pylint ];
 in
 {% endblock %}
 
@@ -12,14 +12,6 @@ in
     {% if python_package_manager == "PDM" %}
     venv = {
       enable = true;
-      requirements = ''
-pdm
-python-lsp-server[all]
-pylint
-importmagic
-epc
-black
-'';
     };
     {% elif python_package_manager == "Poetry" %}
     poetry = {
@@ -30,14 +22,14 @@ black
       install.groups = [ "dev" ];
     };
     {% endif %}
-
-    {% block packages %}
-    stdenv.cc.cc.lib # required by jupyter
-    gcc-unwrapped # fix: libstdc++.so.6: cannot open shared object file
-    libz # fix: for numpy/pandas import
-    (python3.withPackages python-packages)
-    {% endblock %}
   };
+{% endblock %}
+
+{% block packages %}
+stdenv.cc.cc.lib # required by jupyter
+gcc-unwrapped # fix: libstdc++.so.6: cannot open shared object file
+libz # fix: for numpy/pandas import
+(python3.withPackages python-packages)
 {% endblock %}
 
 {% block script %}
