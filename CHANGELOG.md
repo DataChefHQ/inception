@@ -1,3 +1,13 @@
+## v1.9.0 (2024-10-16)
+
+### Feat
+
+- improve base and python template
+
+### Fix
+
+- keep `.envrc` files in new repos.
+
 ## v1.8.1 (2024-10-14)
 
 ### Fix
