@@ -2,18 +2,18 @@
 
 {% block variables %}
 let
-  python-packages = p: with p; [ pip python-lsp-server epc black pylint ];
+  python-packages = p: with p; [ pip python-lsp-server epc pylint ];
 in
 {% endblock %}
 
 {% block languages %}
   python = {
     enable = true;
-    {% if python_package_manager == "PDM" %}
+    {% if python_package_manager == "PDM" -%}
     venv = {
       enable = true;
     };
-    {% elif python_package_manager == "Poetry" %}
+    {% elif python_package_manager == "Poetry" -%}
     poetry = {
       enable = true;
       activate.enable = true;
@@ -21,7 +21,7 @@ in
       install.allExtras = true;
       install.groups = [ "dev" ];
     };
-    {% endif %}
+    {% endif -%}
   };
 {% endblock %}
 
@@ -32,32 +32,34 @@ libz # fix: for numpy/pandas import
 (python3.withPackages python-packages)
 {% endblock %}
 
-{% block script %}
-  # This script is temporary due to two problems:
-  #  1. `cz` requires a personal github token to publish a release https://commitizen-tools.github.io/commitizen/tutorials/github_actions/
-  #  2. `cz bump` fails to sign in a terminal: https://github.com/commitizen-tools/commitizen/issues/1184
-  scripts.release = {
+{% block scripts %}
+  release = {
+    # This script is temporary due to two problems:
+    #  1. `cz` requires a personal github token to publish a release https://commitizen-tools.github.io/commitizen/tutorials/github_actions/
+    #  2. `cz bump` fails to sign in a terminal: https://github.com/commitizen-tools/commitizen/issues/1184
     exec = ''
       rm CHANGELOG.md
       cz bump --files-only --check-consistency
       git tag $(python -c "from src.{{ project_name }} import __version__; print(__version__)")
     '';
-    description = ''
-      Release a new version and update the CHANGELOG.
-    '';
+    description = "Release a new version and update the CHANGELOG.";
+  };
+
+  pyfix = {
+    exec = "ruff check . --fix && ruff format .";
+    description = "Lint, (possibly) fix and apply formatting to python files.";
   };
 {% endblock %}
 
-{% block extra_config %}
-enterShell = ''
-  hello
-  {% if python_package_manager == "PDM" %}
-  pdm install
-  {% endif %}
-'';
+{% block enter_shell %}
+    {% if python_package_manager == "PDM" %}
+    pdm install
+    {% endif -%}
 {% endblock %}
+
+{% block extra_config %}{% endblock %}
+
 {% block hooks %}
     ruff.enable = true;
     editorconfig-checker.enable = true;
-    black.enable = true;
 {% endblock %}
