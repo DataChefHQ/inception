@@ -74,6 +74,7 @@ in
     yamllint = {
       enable = true;
       settings.preset = "relaxed";
+      excludes = [ ".copier-answers.yml" ];
     };
     pyright.enable = true;
     editorconfig-checker.enable = true;

@@ -52,19 +52,17 @@ author_email:
   type: str
   help: "Author Email"
 
-_subdirectory: template
+_subdirectory: template/{{ language }}
 
 # Execute these commands on destination after copy
 _tasks:
-  - command: |
-      devenv shell nixfmt .
-      git init
-      git add .
-      git commit -am 'This is the Inception 🎉'
-    working_directory: "{{ project_name }}"
+  - devenv shell nixfmt .
+  - git init
+  - git add .
+  - git commit -am 'This is the Inception 🎉'
 
 _message_before_copy: |
-  Welcome to Inception 🎉, the gateway to your next big project!
+  \nWelcome to Inception 🎉, the gateway to your next big project!
 
   Your next adventure starts here. Answer a few quick questions, and
   I'll create a project tailored just for you!
@@ -72,13 +70,13 @@ _message_before_copy: |
   Let's create something amazing! 🚀✨
 
 _message_after_copy: |
-  🎉 {{project_name}} Created Successfully! 🎉
+  \n🎉 {{project_name}} Created Successfully! 🎉
 
   Your tailored project is ready and waiting for you. Next steps:
 
-    1. Change directory to the project root:
+    1. Allow direnv to load your project environment:
 
-       $ cd {{ _copier_conf.dst_path }}/{{ project_name }}
+       $ direnv allow
 
     2. Let's hack 🧑🏻‍💻
 
