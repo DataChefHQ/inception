@@ -84,8 +84,6 @@ _message_after_copy: |
 
   Good Luck, DataChef 🧑‍🍳
 
-_message_before_update: |
-  This is a test
-
 _message_after_update: |
-  This is also a test, but after
+
+  🎉 Project updated to latest Inception version! 🎉
