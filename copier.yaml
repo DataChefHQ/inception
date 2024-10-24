@@ -62,22 +62,30 @@ _tasks:
   - git commit -am 'This is the Inception 🎉'
 
 _message_before_copy: |
-  \nWelcome to Inception 🎉, the gateway to your next big project!
 
-  Your next adventure starts here. Answer a few quick questions, and
-  I'll create a project tailored just for you!
+  Welcome to Inception 🎉, the gateway to your next big project!
+
+  Your next adventure starts here. Answer a few quick questions,
+  and I'll create a project tailored just for you!
 
   Let's create something amazing! 🚀✨
 
 _message_after_copy: |
-  \n🎉 {{project_name}} Created Successfully! 🎉
 
-  Your tailored project is ready and waiting for you. Next steps:
+  🎉 {{project_name}} Created Successfully! 🎉
 
-    1. Allow direnv to load your project environment:
+  Your tailored project is ready and waiting for you. Next steps
+
+    1. Allow direnv to load your project environment
 
        $ direnv allow
 
     2. Let's hack 🧑🏻‍💻
 
   Good Luck, DataChef 🧑‍🍳
+
+_message_before_update: |
+  This is a test
+
+_message_after_update: |
+  This is also a test, but after
