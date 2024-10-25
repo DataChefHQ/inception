@@ -19,5 +19,5 @@ indent_size = 2
 [{{_copier_conf.answers_file}}.jinja]
 insert_final_newline = false
 
-[.copier-answers.yml]]
+[.copier-answers.yml]
 insert_final_newline = false
