@@ -1,3 +1,11 @@
+## v1.10.0 (2024-10-29)
+
+### Feat
+
+- add scripts for updating projects
+- enable copier updates for inception
+- add copier-answers file - enables `copier update`
+
 ## v1.9.0 (2024-10-16)
 
 ### Feat
