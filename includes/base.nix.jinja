@@ -20,6 +20,36 @@
   scripts = {
     hello.exec = "echo $GREET";
     cat.exec = "bat $@";
+    check-inception-updates.exec = ''
+      GREEN="\033[0;32m";
+      NC="\033[0m";
+
+      latest_tag=$(curl -s -L -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/DataChefHQ/inception/releases/latest | jq --raw-output '.tag_name')
+      current_commit=$(yq '.["_commit"]' .copier-answers.yml)
+
+      if [[ "$(printf '%s\n' "$current_commit" "$latest_tag" | sort -V | head -n 1)" != "$latest_tag" ]]; then
+        echo
+        echo "🎉 There's an update available for Inception!"
+        echo
+        echo -e "    Your version:  $current_commit"
+        echo -e "  Latest version:  $latest_tag"
+        echo
+        echo -e To update, run "$GREEN"inception-update"$NC" in your shell.
+        echo
+        echo "⚠️ WARNING"
+        echo
+        echo "  Sometimes it's impossible to know what to do with a diff code hunk."
+        echo "  In that case, the conflicting file is updated with conflict markers,"
+        echo "  and you'll have to choose which version to keep."
+        echo
+        echo "  More info at: https://copier.readthedocs.io/en/stable/updating/"
+      fi
+    '';
+
+    inception-update = {
+      description = "Sync this project with the latest version of Inception.";
+      exec = "pipx run copier update --defaults -T --trust";
+    };
 
     show = {
       # Prints scripts that have a description
@@ -51,7 +81,9 @@
     nixfmt-rfc-style
     bat
     jq
+    yq-go
     tealdeer
+    pipx  # to use copier in projects
     {%- block packages %}{% endblock -%}
   ];
 
@@ -62,6 +94,8 @@
   enterShell = ''
     hello
     show
+    check-inception-updates
+
     {%- block enter_shell %}{% endblock -%}
   '';
 
@@ -77,6 +111,7 @@
       enable = true;
       settings.preset = "relaxed";
     };
+    check-merge-conflicts.enable = true;
     {%- block hooks %}{% endblock -%}
   };
 
