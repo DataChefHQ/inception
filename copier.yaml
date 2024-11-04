@@ -1,6 +1,6 @@
 language:
   type: str
-  help: "Programming Lanugage:"
+  help: "Programming Language:"
   choices:
     - Python
     - Node.js
@@ -12,8 +12,8 @@ project_name:
   help: "Project name:"
   validator: >-
     {% if not (project_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
-    project_name must start with a letter, followed one or more
-    letters, digits or underscores all lowercase.
+    project_name must start with a letter, followed by one or more
+    letters, digits, or underscores, all lowercase.
     {% endif %}
 
 project_version:
@@ -41,7 +41,7 @@ python_package_manager:
 
 project_license:
   type: str
-  help: "License(SPDX name)"
+  help: "License (SPDX name)"
   default: MIT
 
 author_name:
@@ -74,7 +74,7 @@ _message_after_copy: |
 
   🎉 {{project_name}} Created Successfully! 🎉
 
-  Your tailored project is ready and waiting for you. Next steps
+  Your tailored project is ready and waiting for you. Next steps:
 
     1. Allow direnv to load your project environment
 
@@ -82,7 +82,7 @@ _message_after_copy: |
 
     2. Let's hack 🧑🏻‍💻
 
-  Good Luck, DataChef 🧑‍🍳
+  Good luck, DataChef 🧑‍🍳
 
 _message_after_update: |
 
