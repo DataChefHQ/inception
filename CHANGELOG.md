@@ -1,3 +1,9 @@
+## v1.10.2 (2024-11-07)
+
+### Fix
+
+- remove node_modules from base template
+
 ## v1.10.1 (2024-11-07)
 
 ### Fix
