@@ -1,3 +1,10 @@
+## v1.10.1 (2024-11-07)
+
+### Fix
+
+- format only devenv.nix
+- NodeJs template
+
 ## v1.10.0 (2024-10-29)
 
 ### Feat
