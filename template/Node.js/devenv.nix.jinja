@@ -1,22 +1,23 @@
 {% extends pathjoin("includes", "base.nix.jinja") %}
 
+{% block packages %}
+    pkgs.nodePackages.vscode-langservers-extracted
+    pkgs.nodePackages.typescript-language-server
+{% endblock %}
+
 {% block languages %}
-rust = {
-  enable = true;
-
-  # https://devenv.sh/reference/options/#languagesrustchannel
-  channel = "nightly";
-
-  components = [
-    "rustc"
-    "cargo"
-    "clippy"
-    "rustfmt"
-    "rust-analyzer"
-  ];
-};
+  javascript.enable = true;
+  javascript.npm = {
+    enable = true;
+    install.enable = true;
+  };
+  typescript.enable = true;
 {% endblock %}
 
 {% block hooks %}
-    editorconfig-checker.enable = true;
+  prettier.enable = true;
+  editorconfig-checker.enable = true;
+  eslint = {
+    enable = true;
+  };
 {% endblock %}
