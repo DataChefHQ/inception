@@ -15,16 +15,18 @@ decision and help us to improve them.
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [In Action](#in-action)
-- [Features](#features)
-  - [Detailed Features](#detailed-features)
-- [How to Use](#how-to-use)
-  - [Prerequisites](#prerequisites)
-  - [Initialize a New Project](#initialize-a-new-project)
-- [Resources](#resources)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [Inception](#inception)
+  - [In Action](#in-action)
+  - [Features](#features)
+    - [Detailed Features](#detailed-features)
+  - [How to Use](#how-to-use)
+    - [Prerequisites](#prerequisites)
+    - [Initialize a New Project](#initialize-a-new-project)
+    - [Watch it in action](#watch-it-in-action)
+  - [Resources](#resources)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
 <!-- markdown-toc end -->
 
@@ -122,6 +124,15 @@ If you have copier installed locally, use:
 ```bash
 copier copy --trust gh:DataChefHQ/Inception .
 ```
+
+### Watch it in action
+
+- Installing Inception:
+[Inception installation Guide](https://github.com/user-attachments/assets/948ef87d-275e-4a5a-b0a9-d19a55682147
+)
+
+- Installing Devenv:
+[Devenv Installation Guide](https://github.com/user-attachments/assets/46c3f42b-e27d-4613-a454-2ef5ba2f3a09)
 
 ## Resources
 
