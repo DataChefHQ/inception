@@ -22,7 +22,6 @@ decision and help us to improve them.
   - [How to Use](#how-to-use)
     - [Prerequisites](#prerequisites)
     - [Initialize a New Project](#initialize-a-new-project)
-    - [Watch it in action](#watch-it-in-action)
   - [Resources](#resources)
   - [Contributing](#contributing)
   - [License](#license)
@@ -32,7 +31,7 @@ decision and help us to improve them.
 
 ## In Action
 
-[![asciicast](https://asciinema.org/a/Mp4w76BgrVcu4hvUR9nbb8EIL.svg)](https://asciinema.org/a/Mp4w76BgrVcu4hvUR9nbb8EIL)
+[![Install Inception](https://res.cloudinary.com/marcomontalbano/image/upload/v1731339691/video_to_markdown/images/google-drive--1emSelH7_yrp51NERaaTQ2Hkk_0omBmGA-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1emSelH7_yrp51NERaaTQ2Hkk_0omBmGA/view?usp=drive_link "Install Inception")
 
 ## Features
 
@@ -78,6 +77,7 @@ decision and help us to improve them.
 To start working with Inception, you need:
 
 - [Devenv](https://devenv.sh/getting-started/), version 1.0.0 or higher.
+  [![Install Devenv](https://res.cloudinary.com/marcomontalbano/image/upload/v1731339790/video_to_markdown/images/google-drive--1rfU7zu3ZGXkgcoBQGZ9vnmWYaPveG0bE-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1rfU7zu3ZGXkgcoBQGZ9vnmWYaPveG0bE/view?usp=drive_link "Install Devenv")
 - [pipx](https://pipx.pypa.io/stable/) or
   [copier](https://copier.readthedocs.io/)
 
@@ -125,14 +125,6 @@ If you have copier installed locally, use:
 copier copy --trust gh:DataChefHQ/Inception .
 ```
 
-### Watch it in action
-
-- Installing Inception:
-[Inception installation Guide](https://github.com/user-attachments/assets/948ef87d-275e-4a5a-b0a9-d19a55682147
-)
-
-- Installing Devenv:
-[Devenv Installation Guide](https://github.com/user-attachments/assets/46c3f42b-e27d-4613-a454-2ef5ba2f3a09)
 
 ## Resources
 
