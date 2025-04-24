@@ -6,31 +6,16 @@
   ...
 }:
 
-let
-  python-packages =
-    p: with p; [
-      pip
-      python-lsp-server
-      epc
-      black
-    ];
-in
 {
   name = "inception";
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
-    # Required for packages with Rust dependencies (eg. pydantic-core)
-    cargo
-    rustc
     # https://github.com/DataChefHQ/inception/issues/21
     git
     bat
     jq
     tealdeer
-
-    # Python Dependencies
-    (python3.withPackages python-packages)
   ];
 
   # This script is temporary due to two problems:
@@ -52,12 +37,13 @@ in
 
   languages.python = {
     enable = true;
-    poetry = {
+    venv.enable = true;
+    uv = {
       enable = true;
-      activate.enable = true;
-      install.enable = true;
-      install.allExtras = true;
-      install.groups = [ "dev" ];
+      sync = {
+        enable = true;
+        allExtras = true;
+      };
     };
   };
 
