@@ -1,30 +1,17 @@
-[tool.poetry]
+[project]
 name = "inception"
 version = "0.1.0"
 description = "DataChef's project kickstarter! Reproducible, Declarative and Reliable development environments."
-authors = ["Reza (Shahin) Khanipour <Shahin@DataChef.co>"]
 readme = "README.md"
-packages = [
-  { include = "inception", from = "src" },
+requires-python = ">=3.12"
+dependencies = [
+    "copier>=9.7.1",
 ]
 
-[tool.poetry.dependencies]
-python = ">=3.11"
-copier = "^9.3.1"
-
-[tool.poetry.group.dev.dependencies]
-commitizen = "^3.29.0"
-pdbpp = "^0.10.3"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.commitizen]
-version = "1.0.0"
-update_changelog_on_bump = true
-version_provider = "scm"
-tag_format = "v$major.$minor.$patch$prerelease"
-version_files = [
-    "src/inception/__init__.py"
+[dependency-groups]
+dev = [
+    "commitizen>=4.6.0",
+    "pdbpp>=0.11.6",
+    "python-lsp-server>=1.12.2",
+    "ruff>=0.11.7",
 ]
