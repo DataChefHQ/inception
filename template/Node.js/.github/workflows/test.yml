@@ -8,6 +8,9 @@ on:
 
 jobs:
   tests:
+    permissions:
+      actions: write
+      contents: read
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
@@ -32,3 +35,5 @@ jobs:
         if: always()
         with:
           primary-key: ${{ runner.os }}-nix
+          purge: true
+          purge-primary-key: always
