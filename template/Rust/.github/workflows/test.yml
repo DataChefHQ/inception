@@ -8,6 +8,9 @@ on:
 
 jobs:
   tests:
+    permissions:
+      actions: write
+      contents: read
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
@@ -15,7 +18,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v26
+      - uses: nixbuild/nix-quick-install-action@v30
+      - uses: nix-community/cache-nix-action/restore@v6
+        id: cache-restore
+        with:
+          primary-key: ${{ runner.os }}-nix
       - uses: cachix/cachix-action@v14
         with:
           name: devenv
@@ -24,3 +31,13 @@ jobs:
 
       - name: Build the devenv shell and run any pre-commit hooks
         run: devenv test
+
+      - uses: nix-community/cache-nix-action/save@v6
+        if: |
+          always() &&
+          (steps.cache-restore.outputs.hit-primary-key != 'true' ||
+           contains(github.event.files, '*.lock'))
+        with:
+          primary-key: ${{ runner.os }}-nix
+          purge: true
+          purge-primary-key: always
