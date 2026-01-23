@@ -1,3 +1,13 @@
+> 🚧 **Project Status**
+>
+> We at **DataChef** are currently focused on building and shipping new products, which means this repository is not actively maintained at the moment.
+>
+> That said, we’re always happy to connect.  
+> • Curious about what we’re working on now? Visit [our website](https://datachef.co) to see our latest projects.  
+> • Interested in this repository or thinking about taking it further? Feel free to reach out to [us directly](https://www.linkedin.com/company/datachefco/).
+>
+> Thanks for stopping by, and happy building.
+
 # Inception
 
 [![DataChefHQ - inception](https://img.shields.io/static/v1?label=DataChefHQ&message=inception&color=blue&logo=github)](https://github.com/DataChefHQ/inception "Go to GitHub repo")
